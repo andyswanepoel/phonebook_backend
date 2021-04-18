@@ -1,11 +1,11 @@
-GET http://localhost:3001/api/persons
+GET https://powerful-coast-98110.herokuapp.com/api/persons
 ###
-DELETE http://localhost:3001/api/persons/2
+DELETE https://powerful-coast-98110.herokuapp.com/api/persons/2
 ###
-POST http://localhost:3001/api/persons
+POST https://powerful-coast-98110.herokuapp.com/api/persons
 Content-Type: application/json
 
 {
-	"name": "Liisa Marrtinen",
-	"number": "1-234-445-555"
+	"name": "Joe Shmoe",
+	"number": "1-555-445-555"
 }
