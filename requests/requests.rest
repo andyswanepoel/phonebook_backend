@@ -1,0 +1,11 @@
+GET http://localhost:3001/api/persons
+###
+DELETE http://localhost:3001/api/persons/2
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+	"name": "Liisa Marrtinen",
+	"number": "1-234-445-555"
+}
