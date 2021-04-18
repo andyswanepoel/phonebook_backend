@@ -1,9 +1,11 @@
 const { request, response } = require('express');
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 const app = express()
 
 app.use(express.json());
+app.use(cors());
 
 // Create new token named 'body'
 // Returns stringified request body
@@ -33,6 +35,10 @@ let persons = [
 		number: "39-24-543654"
 	}
 ]
+
+app.get("/", (request, response) => {
+	response.send("<h1>Phonebook App</h1>");
+})
 
 app.get("/info", (request, response) => {
 	const body = `<p>Phone book has info for ${persons.length} people.</p>
@@ -97,7 +103,7 @@ app.delete("/api/persons/:id", (request, response) => {
 	response.status(204).end();
 })
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT), () => {
 	console.log(`Server is running on ${PORT}`);
 };
